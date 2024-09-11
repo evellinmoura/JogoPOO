@@ -8,10 +8,6 @@ public class Moleton extends JogadorDecorator {
         super(jogador);
     }
 
-    public void aplicarItem() {
-        System.out.println("Jogador " + jogadorDecorado.getCor() + " está usando moleton e ganhará +4 moedas nas casas simples.");
-    }
-
     @Override
     public void adicionarMoedas(int qtd) {
         if (jogadorDecorado instanceof Bone) {
@@ -23,7 +19,6 @@ public class Moleton extends JogadorDecorator {
 
     @Override
     public int jogarDados() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'jogarDados'");
+        return jogadorDecorado.jogarDados(); // Delegar jogarDados ao jogador original
     }
 }

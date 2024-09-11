@@ -105,4 +105,14 @@ public class Tabuleiro {
         }
         System.out.println("---------------------------------------------------");
     }
+    public Casa getCasaAtual(int posicao) {
+        // Verifica se a posição é válida
+        if (posicao < 0 || posicao >= casas.size()) {
+            throw new IllegalArgumentException("Posição fora dos limites do tabuleiro");
+        }
+        // Retorna a casa correspondente à posição
+        return casas.get(posicao);
+    }
+
+
 }
