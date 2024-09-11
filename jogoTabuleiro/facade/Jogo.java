@@ -21,8 +21,8 @@ public class Jogo {
                 tabuleiro.adicionarCasa(Factory.criarCasa("surpresa", i));
             } else if (i == 10 || i == 25 || i == 38) {
                 tabuleiro.adicionarCasa(Factory.criarCasa("prisao", i));
-            } else if (i == 11 || i == 14 || i == 31) {
-                tabuleiro.adicionarCasa(Factory.criarCasa("azar", i)); // Casas de Azar
+            } else if (i == 11 || i == 28) {
+                tabuleiro.adicionarCasa(Factory.criarCasa("reversa", i)); // Casas Reversas
             } else if (i == 7 || i == 21) {
                 tabuleiro.adicionarCasa(Factory.criarCasa("jogadaDeNovo", i)); // Casas de JogaDeNovo
             } else if (i == 9 || i == 33) {
@@ -34,6 +34,7 @@ public class Jogo {
             }
         }
     }
+    
 
     public void config(int numJogadores) {
         System.out.println("Configurando " + numJogadores + " jogadores.");

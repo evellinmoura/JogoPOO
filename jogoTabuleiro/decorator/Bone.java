@@ -8,6 +8,10 @@ public class Bone extends JogadorDecorator {
         super(jogador);
     }
 
+    public void aplicarItem() {
+        System.out.println("Jogador " + jogadorDecorado.getCor() + " está usando boné e ganhará +1 moeda nas casas simples.");
+    }
+
     @Override
     public void adicionarMoedas(int qtd) {
         jogadorDecorado.adicionarMoedas(qtd + 1); // Ganha 1 moeda extra em casas simples
@@ -15,6 +19,6 @@ public class Bone extends JogadorDecorator {
 
     @Override
     public int jogarDados() {
-        return jogadorDecorado.jogarDados(); // Delegar jogarDados ao jogador original
+        return jogadorDecorado.jogarDados();
     }
 }

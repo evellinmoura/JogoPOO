@@ -8,6 +8,10 @@ public class Oculos extends JogadorDecorator {
         super(jogador);
     }
 
+    public void aplicarItem() {
+        System.out.println("Jogador " + jogadorDecorado.getCor() + " está usando óculos escuros e ganhará +7 moedas nas casas simples.");
+    }
+
     @Override
     public void adicionarMoedas(int qtd) {
         if (jogadorDecorado instanceof Moleton) {
@@ -19,6 +23,6 @@ public class Oculos extends JogadorDecorator {
 
     @Override
     public int jogarDados() {
-        return jogadorDecorado.jogarDados(); // Delegar jogarDados ao jogador original
+        return jogadorDecorado.jogarDados();
     }
 }
