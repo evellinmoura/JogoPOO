@@ -9,7 +9,7 @@ public class Moleton extends JogadorDecorator {
     }
 
     public void aplicarItem() {
-        System.out.println("Jogador " + jogadorDecorado.getCor() + " está usando moleton e ganhará +4 moedas nas casas simples.");
+        System.out.println("Jogador " + jogadorDecorado.getCor() + " está usando moleton e ganhará +3 moedas extras nas casas simples com o boné.");
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Moleton extends JogadorDecorator {
         if (jogadorDecorado instanceof Bone) {
             jogadorDecorado.adicionarMoedas(qtd + 3); // Moleton + Boné = 4 moedas extras
         } else {
-            jogadorDecorado.adicionarMoedas(qtd); // Sem boné, sem bônus
+            jogadorDecorado.adicionarMoedas(qtd); // Sem boné, sem bônus adicional
         }
     }
 

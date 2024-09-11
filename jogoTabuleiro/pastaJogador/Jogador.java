@@ -6,7 +6,10 @@ public abstract class Jogador {
     private int moedas;
     private int jogadas;
     private boolean preso;
-    private int rodadasPreso; // Contador de rodadas que o jogador está preso
+    private int rodadasPreso;
+    private boolean temBone;
+    private boolean temMoleton;
+    private boolean temOculos;
 
     public Jogador(String cor) {
         this.cor = cor;
@@ -15,6 +18,9 @@ public abstract class Jogador {
         this.jogadas = 0;
         this.preso = false;
         this.rodadasPreso = 0;
+        this.temBone = false;
+        this.temMoleton = false;
+        this.temOculos = false;
     }
 
     public abstract int jogarDados();
@@ -54,7 +60,7 @@ public abstract class Jogador {
     public void setPreso(boolean preso) {
         this.preso = preso;
         if (preso) {
-            this.rodadasPreso = 2; // Jogador fica preso por 2 rodadas
+            this.rodadasPreso = 2;
         }
     }
 
@@ -76,6 +82,31 @@ public abstract class Jogador {
     }
 
     public boolean podePagarParaSair() {
-        return this.moedas >= 2; // Verifica se o jogador pode pagar 2 moedas para sair da prisão
+        return this.moedas >= 2;
+    }
+
+    // Métodos para controlar os itens
+    public boolean temBone() {
+        return temBone;
+    }
+
+    public void setBone(boolean temBone) {
+        this.temBone = temBone;
+    }
+
+    public boolean temMoleton() {
+        return temMoleton;
+    }
+
+    public void setMoleton(boolean temMoleton) {
+        this.temMoleton = temMoleton;
+    }
+
+    public boolean temOculos() {
+        return temOculos;
+    }
+
+    public void setOculos(boolean temOculos) {
+        this.temOculos = temOculos;
     }
 }

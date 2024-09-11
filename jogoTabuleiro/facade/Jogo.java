@@ -34,7 +34,6 @@ public class Jogo {
             }
         }
     }
-    
 
     public void config(int numJogadores) {
         System.out.println("Configurando " + numJogadores + " jogadores.");
@@ -69,6 +68,8 @@ public class Jogo {
                         if (jogador.podePagarParaSair()) {
                             System.out.println("Digite '1' para pagar 2 moedas e sair da prisão, ou '2' para esperar:");
                             int escolha = scanner.nextInt();
+                            scanner.nextLine(); // Consumir a nova linha
+
                             if (escolha == 1) {
                                 jogador.removerMoedas(2);
                                 jogador.decrementarRodadasPreso();
@@ -87,6 +88,7 @@ public class Jogo {
 
                 System.out.println("Digite '1' para rolar os dados ou '2' para entrar no modo Debug:");
                 int escolha = scanner.nextInt();
+                scanner.nextLine(); // Consumir a nova linha
 
                 if (escolha == 1) {
                     int valorDados = jogador.jogarDados();
@@ -95,6 +97,7 @@ public class Jogo {
                 } else if (escolha == 2) {
                     System.out.println("Modo Debug: para qual casa o jogador deve ir?");
                     int novaPosicao = scanner.nextInt();
+                    scanner.nextLine(); // Consumir a nova linha
                     tabuleiro.moverJogadorDebug(jogador, novaPosicao);
                 }
 
