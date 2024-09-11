@@ -1,11 +1,10 @@
 package jogoTabuleiro.pastaCasa;
 
+import java.util.Random;
 import jogoTabuleiro.pastaJogador.*;
 
-import java.util.Random;
-
 public class CasaSurpresa extends Casa {
-    private Random random;
+    private final Random random; // inclusao do final na variavel
 
     public CasaSurpresa(int numero) {
         super(numero);
